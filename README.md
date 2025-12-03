@@ -1,4 +1,10 @@
-# Ascii Binary Compiler
+<div align="center">
+
+  # Ascii Binary Compiler
+Transform your `.bapple` media into actual executable files.
+
+
+</div>
 
 ## Usage
 ```sh

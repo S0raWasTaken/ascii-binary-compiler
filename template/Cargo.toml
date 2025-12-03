@@ -1,0 +1,16 @@
+[package]
+name = "template_name"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88.0"
+
+[dependencies]
+ascii-linker = "1.0.0"
+rodio = "0.21.1"
+zstd = "0.13.3"
+
+[profile.release]
+opt-level = "s"
+codegen-units = 1
+panic = "abort"
+strip = true

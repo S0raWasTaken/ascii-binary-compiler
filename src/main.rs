@@ -72,7 +72,12 @@ fn copy_template(dir: &TempDir, file_name: &str) -> Res<()> {
 
     let main_rs = TEMPLATE[0].replace(
         "TEMPLATE_PWD",
-        &path.canonicalize()?.join("link.bapple").to_string_lossy(),
+        &path
+            .canonicalize()?
+            .join("link.bapple")
+            .to_string_lossy()
+            .replace("\\\\?\\", "")
+            .replace('\\', "/"),
     );
     let cargo_toml = TEMPLATE[1].replace("template_name", file_name);
 

@@ -46,6 +46,10 @@ fn main() -> Res<()> {
     copy(file_clone, temp_dir.path().join("link.bapple"))?;
 
     run_cargo_build(&temp_dir)?;
+
+    #[cfg(windows)]
+    let file_name = format!("{file_name}.exe");
+
     copy(
         temp_dir.path().join(format!("target/release/{file_name}")),
         file_path.join(&*file_name),
